@@ -35,7 +35,8 @@ function recSumTo(n) {
  * @param {*} n
  */
 function factorial(n) {
-    if (n < 0) return NaN;
+    if (n < 0) return undefined;
+    if (n === 0) return 0;
     if (n <= 1) return 1;
     return n * factorial(n - 1);
 }
@@ -45,7 +46,7 @@ function factorial(n) {
  */
 function isBinary(n) {
     if (typeof n !== 'number' || !Number.isFinite(n) || n <= 0) return false;
-    if ((n | 0) !== n) return false; // must be integer
+    if ((n | 0) !== n) return false;
     return (n & (n - 1)) === 0;
 }
 
@@ -53,7 +54,8 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
-    if (n <= 0) return 0;
+    if (n < 0) return undefined;
+    if (n === 0) return 0;
     if (n === 1) return 1;
     let a = 0, b = 1;
     for (let i = 2; i <= n; i++) {
