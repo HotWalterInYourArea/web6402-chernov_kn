@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бобры | Опрос</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">Опрос «Что вы думаете о бобрах?»</h1>
+        </header>
+
+        <nav class="nav">
+            <a class="nav__link" href="index.html">Главная</a>
+            <a class="nav__link" href="facts.html">Факты</a>
+            <a class="nav__link" href="gallery.html">Галерея</a>
+            <a class="nav__link" href="table.html">Таблица</a>
+            <a class="nav__link nav__link--active" href="form.html">Опрос</a>
+        </nav>
+
+        <main>
+            <h2>Ответьте на несколько вопросов</h2>
+
+            <form class="form" id="survey-form" novalidate>
+
+                <div class="form__group">
+                    <label class="form__label" for="name">Ваше имя</label>
+                    <input class="form__input" type="text"
+                           id="name" name="name"
+                           placeholder="Например, Иван" required>
+                </div>
+
+                <fieldset class="form__group form__fieldset">
+                    <legend class="form__label">Как часто вы наблюдаете бобров?</legend>
+                    <label class="form__radio">
+                        <input type="radio" name="frequency" value="Каждый день" checked>
+                        Каждый день
+                    </label>
+                    <label class="form__radio">
+                        <input type="radio" name="frequency" value="Раз в неделю">
+                        Раз в неделю
+                    </label>
+                    <label class="form__radio">
+                        <input type="radio" name="frequency" value="Раз в месяц">
+                        Раз в месяц
+                    </label>
+                    <label class="form__radio">
+                        <input type="radio" name="frequency" value="Никогда">
+                        Никогда
+                    </label>
+                </fieldset>
+
+    
+                <div class="form__group">
+                    <label class="form__label" for="favorite-species">
+                        Любимый вид бобра
+                    </label>
+                    <select class="form__select" id="favorite-species" name="favoriteSpecies">
+                        <option value="Обыкновенный бобр">Обыкновенный бобр</option>
+                        <option value="Канадский бобр">Канадский бобр</option>
+                        <option value="Речной бобр">Речной бобр</option>
+                        <option value="Горный бобр">Горный бобр</option>
+                        <option value="Не знаю">Не знаю</option>
+                    </select>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="skill">
+                        Оцените «инженерный талант» бобров по 10-балльной шкале:
+                        <span class="highlight" id="skill-value">7</span>
+                    </label>
+                    <input class="form__range" type="range"
+                           id="skill" name="skill"
+                           min="1" max="10" value="7" step="1">
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="comment">
+                        Что вам больше всего нравится в бобрах?
+                    </label>
+                    <textarea class="form__textarea" id="comment" name="comment"
+                              rows="4"
+                              placeholder="Например: их способности в роли десантных войск..."></textarea>
+                </div>
+
+                <div class="form__checkbox-row">
+                    <input type="checkbox" id="agree" name="agree">
+                    <label for="agree">Согласен на обработку персональных данных</label>
+                </div>
+
+                <p class="form__error" id="form-error" style="display:none;"></p>
+
+                <div class="form__actions">
+                    <button class="btn btn--primary" type="submit">
+                        Отправить ответы
+                    </button>
+                    <button class="btn" type="reset">Сбросить</button>
+                </div>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <p>Лабораторная работа №4 — Web-программирование, 2026</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
